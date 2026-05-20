@@ -1,0 +1,234 @@
+.storySection {
+  padding: 100px 20px;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.category {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--accent-dark);
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 15px auto 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Central Line */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--accent-light) 10%,
+    var(--accent) 50%,
+    var(--accent-light) 90%,
+    transparent 100%
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
+  padding: 20px 0;
+  position: relative;
+  width: 50%;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.left {
+  left: 0;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.right {
+  left: 50%;
+  justify-content: flex-start;
+  padding-left: 50px;
+}
+
+/* Dot Container */
+.dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(138, 88, 88, 0.15);
+  transition: all 0.3s ease;
+}
+
+.left .dot {
+  right: -24px;
+}
+
+.right .dot {
+  left: -24px;
+}
+
+.iconWrapper {
+  width: 24px;
+  height: 24px;
+  color: var(--accent-dark);
+}
+
+.timelineItem:hover .dot {
+  transform: translateY(-50%) scale(1.15);
+  background: var(--bg-secondary);
+  border-color: var(--accent-dark);
+  box-shadow: 0 4px 20px rgba(138, 88, 88, 0.3);
+}
+
+/* Timeline Cards */
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(138, 88, 88, 0.04);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(138, 88, 88, 0.12);
+  border-color: var(--accent-light);
+}
+
+.cardDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-gradient);
+}
+
+.dateBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: var(--bg-primary);
+  color: var(--accent-dark);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(138, 88, 88, 0.05);
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--accent-dark);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.cardSubtitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .timeline::after {
+    left: 30px;
+    transform: none;
+  }
+  
+  .timelineItem {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  
+  .left, .right {
+    left: 0;
+    padding-left: 70px;
+    padding-right: 0;
+  }
+  
+  .dot {
+    left: 6px !important;
+    right: auto !important;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+}

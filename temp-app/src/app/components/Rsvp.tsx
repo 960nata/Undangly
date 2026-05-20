@@ -9,6 +9,7 @@ interface RsvpItem {
   id: string;
   name: string;
   status: string;
+  guestsCount: number;
   message: string;
   createdAt: Date;
 }
@@ -17,6 +18,7 @@ export default function Rsvp() {
   const searchParams = useSearchParams();
   const [name, setName] = useState("");
   const [status, setStatus] = useState("Hadir");
+  const [guestsCount, setGuestsCount] = useState(1);
   const [message, setMessage] = useState("");
   const [rsvps, setRsvps] = useState<RsvpItem[]>([]);
   const [isPending, startTransition] = useTransition();
@@ -33,7 +35,7 @@ export default function Rsvp() {
   // Load RSVPs
   const loadRsvps = async () => {
     const data = await getRsvps();
-    setRsvps(data as RsvpItem[]);
+    setRsvps(data as unknown as RsvpItem[]);
   };
 
   useEffect(() => {
@@ -49,10 +51,12 @@ export default function Rsvp() {
 
     setFormStatus(null);
     startTransition(async () => {
-      const res = await submitRsvp(name, status, message);
+      const actualGuests = status === "Hadir" ? guestsCount : 0;
+      const res = await submitRsvp(name, status, actualGuests, message);
       if (res.success) {
         setFormStatus({ success: true, text: "Konfirmasi & ucapan Anda berhasil dikirim!" });
         setMessage("");
+        setGuestsCount(1);
         // Reload list
         loadRsvps();
       } else {
@@ -61,12 +65,23 @@ export default function Rsvp() {
     });
   };
 
+  const getInitials = (fullName: string) => {
+    const parts = fullName.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[1][0]).toUpperCase();
+    }
+    return parts[0] ? parts[0][0].toUpperCase() : "?";
+  };
+
   return (
     <section id="rsvp" className={`${styles.rsvp} reveal`}>
       <div className={styles.container}>
         <div className={styles.introHeader}>
           <span className={styles.introSubtitle}>KEHADIRAN & UCAPAN</span>
           <h2 className={styles.introTitle}>RSVP & Ucapan Bahagia</h2>
+          <div className="floral-divider">
+            <span style={{ fontSize: "1.2rem", color: "var(--accent)" }}>✿</span>
+          </div>
           <p className={styles.introText}>
             Konfirmasikan kehadiran Anda dan kirimkan doa restu serta ucapan terbaik bagi kami berdua:
           </p>
@@ -120,8 +135,27 @@ export default function Rsvp() {
                 </div>
               </div>
 
+              {status === "Hadir" && (
+                <div className={styles.inputGroup}>
+                  <label htmlFor="guestsCount" className={styles.label}>Jumlah Tamu yang Hadir</label>
+                  <select
+                    id="guestsCount"
+                    value={guestsCount}
+                    onChange={(e) => setGuestsCount(Number(e.target.value))}
+                    className={styles.select}
+                    disabled={isPending}
+                  >
+                    <option value={1}>1 Orang</option>
+                    <option value={2}>2 Orang</option>
+                    <option value={3}>3 Orang</option>
+                    <option value={4}>4 Orang</option>
+                    <option value={5}>5 Orang</option>
+                  </select>
+                </div>
+              )}
+
               <div className={styles.inputGroup}>
-                <label htmlFor="message" className={styles.label}>Doa & Ucapan</label>
+                <label htmlFor="message" className={styles.label}>Doa &amp; Ucapan</label>
                 <textarea
                   id="message"
                   value={message}
@@ -145,7 +179,7 @@ export default function Rsvp() {
                   <span>MENGIRIM...</span>
                 ) : (
                   <>
-                    <i className="fas fa-paper-plane"></i> KIRIM KONFIRMASI
+                    BUAT KONFIRMASI
                   </>
                 )}
               </button>
@@ -164,22 +198,27 @@ export default function Rsvp() {
               ) : (
                 rsvps.map((rsvp) => (
                   <div key={rsvp.id} className={styles.wishCard}>
-                    <div className={styles.wishHeader}>
-                      <span className={styles.wishName}>{rsvp.name}</span>
-                      <span className={`${styles.badge} ${rsvp.status === "Hadir" ? styles.badgeHadir : styles.badgeAbsen}`}>
-                        {rsvp.status}
+                    <div className={styles.avatar}>
+                      {getInitials(rsvp.name)}
+                    </div>
+                    <div className={styles.wishContent}>
+                      <div className={styles.wishHeader}>
+                        <span className={styles.wishName}>{rsvp.name}</span>
+                        <span className={`${styles.badge} ${rsvp.status === "Hadir" ? styles.badgeHadir : styles.badgeAbsen}`}>
+                          {rsvp.status === "Hadir" ? `Hadir (${rsvp.guestsCount} Orang)` : "Tidak Hadir"}
+                        </span>
+                      </div>
+                      <p className={styles.wishMessage}>{rsvp.message}</p>
+                      <span className={styles.wishTime}>
+                        {new Date(rsvp.createdAt).toLocaleDateString("id-ID", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })}
                       </span>
                     </div>
-                    <p className={styles.wishMessage}>{rsvp.message}</p>
-                    <span className={styles.wishTime}>
-                      {new Date(rsvp.createdAt).toLocaleDateString("id-ID", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
                   </div>
                 ))
               )}

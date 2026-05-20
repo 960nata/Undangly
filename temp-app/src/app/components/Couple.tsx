@@ -9,7 +9,7 @@ export default function Couple() {
       <div className={styles.container}>
         <div className={styles.introHeader}>
           <span className={styles.introSubtitle}>MEMPELAI</span>
-          <h2 className={styles.introTitle}>Mempelai Pria & Wanita</h2>
+          <h2 className={styles.introTitle}>Mempelai Pria &amp; Wanita</h2>
           <p className={styles.introText}>
             Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah, perkenankanlah kami menikahkan putra-putri kami:
           </p>
@@ -22,16 +22,17 @@ export default function Couple() {
               <Image
                 src="/assets/groom.png"
                 alt="Arnold Christian"
-                width={280}
-                height={350}
+                width={260}
+                height={320}
                 className={styles.profileImg}
                 priority
               />
               <div className={styles.imgBorder} />
             </div>
             <h3 className={styles.coupleName}>Arnold Christian</h3>
+            <p className={styles.birthOrder}>Putra Pertama</p>
             <p className={styles.parentage}>
-              Putra sulung dari <br />
+              Dari pasangan <br />
               <strong>Bpk. Christian</strong> &amp; <strong>Ibu Maria</strong>
             </p>
             <a
@@ -44,7 +45,7 @@ export default function Couple() {
             </a>
           </div>
 
-          {/* Elegant Ampersand Divider */}
+          {/* Elegant Divider */}
           <div className={styles.divider}>
             <span>&amp;</span>
           </div>
@@ -55,16 +56,17 @@ export default function Couple() {
               <Image
                 src="/assets/bride.png"
                 alt="Kila Putri Wardhana"
-                width={280}
-                height={350}
+                width={260}
+                height={320}
                 className={styles.profileImg}
                 priority
               />
               <div className={styles.imgBorder} />
             </div>
             <h3 className={styles.coupleName}>Kila Putri Wardhana</h3>
+            <p className={styles.birthOrder}>Putri Bungsu</p>
             <p className={styles.parentage}>
-              Putri bungsu dari <br />
+              Dari pasangan <br />
               <strong>Bpk. Wardhana</strong> &amp; <strong>Ibu Lastri</strong>
             </p>
             <a

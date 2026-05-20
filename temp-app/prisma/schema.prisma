@@ -7,9 +7,10 @@ datasource db {
 }
 
 model Rsvp {
-  id        String   @id @default(uuid())
-  name      String
-  status    String   // "Hadir" or "Tidak Hadir"
-  message   String   @db.Text
-  createdAt DateTime @default(now())
+  id          String   @id @default(uuid())
+  name        String
+  status      String   // "Hadir" or "Tidak Hadir"
+  guestsCount Int      @default(1)
+  message     String   @db.Text
+  createdAt   DateTime @default(now())
 }

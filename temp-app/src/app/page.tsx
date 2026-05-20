@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect, useState, startTransition, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Cover from "./components/Cover";
 import Hero from "./components/Hero";
+import Quotes from "./components/Quotes";
 import Couple from "./components/Couple";
 import Event from "./components/Event";
+import Story from "./components/Story";
+import Gallery from "./components/Gallery";
 import Rsvp from "./components/Rsvp";
 import Gift from "./components/Gift";
 import Footer from "./components/Footer";
@@ -25,7 +28,7 @@ function InvitationContent() {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.15,
+      threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -40,7 +43,7 @@ function InvitationContent() {
     const timeout = setTimeout(() => {
       const revealElements = document.querySelectorAll(".reveal");
       revealElements.forEach((el) => observer.observe(el));
-    }, 100);
+    }, 150);
 
     return () => {
       clearTimeout(timeout);
@@ -57,8 +60,11 @@ function InvitationContent() {
       {isOpen && (
         <main className={styles.contentWrapper}>
           <Hero />
+          <Quotes />
           <Couple />
           <Event />
+          <Story />
+          <Gallery />
           <Rsvp />
           <Gift />
           <Footer />
@@ -79,8 +85,8 @@ export default function Home() {
         justifyContent: "center", 
         alignItems: "center", 
         height: "100vh", 
-        background: "#0d0d0d", 
-        color: "#c5a059",
+        background: "var(--bg-primary)", 
+        color: "var(--accent-dark)",
         fontFamily: "var(--font-serif)",
         fontSize: "1.5rem"
       }}>

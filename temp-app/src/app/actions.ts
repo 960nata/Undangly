@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 
 const prisma = new PrismaClient();
 
-export async function submitRsvp(name: string, status: string, message: string) {
+export async function submitRsvp(name: string, status: string, guestsCount: number, message: string) {
   if (!name.trim() || !message.trim()) {
     return { success: false, error: "Name and message are required." };
   }
@@ -14,6 +14,7 @@ export async function submitRsvp(name: string, status: string, message: string) 
       data: {
         name: name.trim(),
         status,
+        guestsCount: Number(guestsCount) || 1,
         message: message.trim(),
       },
     });

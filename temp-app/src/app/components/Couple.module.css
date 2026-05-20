@@ -1,0 +1,173 @@
+.couple {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.introHeader {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.introSubtitle {
+  font-size: 0.8rem;
+  letter-spacing: 5px;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.introTitle {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.introText {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.coupleGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.coupleCard {
+  flex: 1;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  padding: 30px 20px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.coupleCard:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(197, 160, 89, 0.15);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.05);
+}
+
+.imgWrapper {
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.profileImg {
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+.imgBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(197, 160, 89, 0.4);
+  border-radius: 20px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.coupleCard:hover .imgBorder {
+  transform: rotate(2deg) scale(1.02);
+  border-color: var(--accent);
+}
+
+.coupleName {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.parentage {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.parentage strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.instagramLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--accent-light);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: rgba(197, 160, 89, 0.05);
+  transition: all 0.3s ease;
+}
+
+.instagramLink:hover {
+  background: var(--accent);
+  color: #0d0d0d;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.divider {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.5;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .coupleGrid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .divider {
+    transform: rotate(90deg);
+    padding: 10px 0;
+    margin: 10px 0;
+  }
+  
+  .coupleCard {
+    max-width: 320px;
+  }
+}

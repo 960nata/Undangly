@@ -1,0 +1,152 @@
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2000;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.75)),
+    url('/assets/wedding-bg.png') center/cover no-repeat;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 90%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: fadeIn 1.5s ease-out;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 6px;
+  color: #a0a0a0;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.coupleName {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #c5a059;
+  background: linear-gradient(135deg, #f5d79e 0%, #c5a059 50%, #8c6a2b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(197, 160, 89, 0.15);
+}
+
+.date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: #d1d1d1;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+.toBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 30px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+.toLabel {
+  font-size: 0.85rem;
+  color: #8c8c8c;
+  margin-bottom: 8px;
+}
+
+.guestName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+.btnOpen {
+  background: linear-gradient(135deg, #c5a059 0%, #a27b37 100%);
+  color: #0d0d0d;
+  border: none;
+  padding: 16px 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btnOpen:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4);
+  background: linear-gradient(135deg, #d8b773 0%, #b28a45 100%);
+}
+
+.btnOpen:active {
+  transform: translateY(0);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.slideUp {
+  transform: translateY(-100%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .coupleName {
+    font-size: 2.6rem;
+  }
+  .content {
+    padding: 30px 20px;
+  }
+  .guestName {
+    font-size: 1.4rem;
+  }
+}

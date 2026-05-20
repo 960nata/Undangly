@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+}
+
+model Rsvp {
+  id        String   @id @default(uuid())
+  name      String
+  status    String   // "Hadir" or "Tidak Hadir"
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}

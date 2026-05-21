@@ -19,8 +19,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "The Wedding of Kila & Arnold",
-  description: "Undangan Pernikahan Digital Kila & Arnold - 22 Februari 2025",
+  title: "Undangly - Undangan Digital #1 di Indonesia",
+  description: "Buat undangan pernikahan digital premium, elegan, dan interaktif secara gratis.",
 };
 
 export const viewport: Viewport = {

@@ -51,7 +51,9 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.heroGrid}>
               <div className={styles.heroLeft}>
-                <span className={styles.badge}>✨ Undangan Digital #1 di Indonesia</span>
+                <span className={styles.badge}>
+                  <i className="fa-solid fa-wand-magic-sparkles"></i> Undangan Digital #1 di Indonesia
+                </span>
                 <h1 className={styles.title}>
                   Undangan yang berkesan
                   <span className={styles.titleHighlight}>untuk hari istimewa</span>
@@ -61,10 +63,10 @@ export default function LandingPage() {
                 </p>
                 <div className={styles.heroActions}>
                   <Link href="/templates" className={styles.btnPrimary}>
-                    Mulai Gratis Sekarang
+                    Mulai Gratis Sekarang <i className="fa-solid fa-arrow-right" style={{ marginLeft: "8px" }}></i>
                   </Link>
                   <Link href="/preview" className={styles.btnSecondary}>
-                    Lihat Demo →
+                    Lihat Demo <i className="fa-solid fa-circle-play" style={{ marginLeft: "8px", color: "var(--accent)" }}></i>
                   </Link>
                 </div>
                 <div className={styles.stats}>
@@ -95,6 +97,23 @@ export default function LandingPage() {
                     className={styles.heroImage}
                   />
                 </div>
+
+                {/* Floating Dopamine Badges */}
+                <div className={`${styles.floatingCard} ${styles.floatingCard1}`}>
+                  <span className={styles.floatingCardIcon}>🌸</span>
+                  <div className={styles.floatingCardText}>
+                    <h4>50+ Tema Indah</h4>
+                    <p>Modern & Elegan</p>
+                  </div>
+                </div>
+                
+                <div className={`${styles.floatingCard} ${styles.floatingCard2}`}>
+                  <span className={styles.floatingCardIcon}>✨</span>
+                  <div className={styles.floatingCardText}>
+                    <h4>RSVP Real-time</h4>
+                    <p>Konfirmasi Otomatis</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -105,27 +124,30 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Cara kerja</span>
-              <h2 className={styles.sectionTitle}>Siap dalam 3 langkah</h2>
-              <p className={styles.sectionDesc}>Dari daftar sampai undangan jadi, cuma butuh beberapa menit.</p>
+              <h2 className={styles.sectionTitle}>Siap dalam 3 langkah mudah</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-leaf"></i>
+              </div>
+              <p className={styles.sectionDesc}>Dari daftar sampai undangan jadi, cuma butuh beberapa menit saja.</p>
             </div>
 
             <div className={styles.stepsGrid}>
               <div className={styles.stepCard}>
                 <span className={styles.stepNumber}>01</span>
                 <div className={styles.stepIcon}>🎨</div>
-                <h3 className={styles.stepTitle}>Pilih template</h3>
+                <h3 className={styles.stepTitle}>Pilih Template</h3>
                 <p className={styles.stepDesc}>Pilih dari 50+ template premium yang sudah dikurasi. Tersedia tema modern, islami, adat, dan garden.</p>
               </div>
               <div className={styles.stepCard}>
                 <span className={styles.stepNumber}>02</span>
                 <div className={styles.stepIcon}>✏️</div>
-                <h3 className={styles.stepTitle}>Isi data & kustomisasi</h3>
+                <h3 className={styles.stepTitle}>Isi Data & Kustomisasi</h3>
                 <p className={styles.stepDesc}>Masukkan nama, tanggal, foto, dan semua detail. Edit warna, font, dan konten sesuai keinginan.</p>
               </div>
               <div className={styles.stepCard}>
                 <span className={styles.stepNumber}>03</span>
                 <div className={styles.stepIcon}>💌</div>
-                <h3 className={styles.stepTitle}>Bagikan ke tamu</h3>
+                <h3 className={styles.stepTitle}>Bagikan ke Tamu</h3>
                 <p className={styles.stepDesc}>Dapatkan link unik dan bagikan via WhatsApp, Instagram, atau email. Pantau RSVP real-time.</p>
               </div>
             </div>
@@ -137,38 +159,53 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Fitur unggulan</span>
-              <h2 className={styles.sectionTitle}>Semua yang kamu butuhkan</h2>
+              <h2 className={styles.sectionTitle}>Semua yang Kamu Butuhkan</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-heart"></i>
+              </div>
               <p className={styles.sectionDesc}>Fitur lengkap untuk menyempurnakan hari bahagia pernikahan Anda.</p>
             </div>
 
             <div className={styles.featuresGrid}>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>🎭</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-palette"></i>
+                </div>
                 <h3 className={styles.featureTitle}>50+ Template Premium</h3>
                 <p className={styles.featureDesc}>Desain eksklusif dari desainer lokal terbaik. Tersedia tema modern, islami, Jawa, garden, dan lainnya.</p>
               </div>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>✉️</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-envelope-open-text"></i>
+                </div>
                 <h3 className={styles.featureTitle}>RSVP Real-time</h3>
                 <p className={styles.featureDesc}>Form konfirmasi kehadiran otomatis. Data tamu langsung masuk ke dashboard. Export ke Excel kapan saja.</p>
               </div>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>🗺️</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-map-location-dot"></i>
+                </div>
                 <h3 className={styles.featureTitle}>Integrasi Google Maps</h3>
                 <p className={styles.featureDesc}>Peta interaktif langsung di undangan. Tamu tinggal klik untuk navigasi langsung ke lokasi acara.</p>
               </div>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>🎵</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-music"></i>
+                </div>
                 <h3 className={styles.featureTitle}>Musik & Galeri Foto</h3>
                 <p className={styles.featureDesc}>Upload lagu favorit sebagai BGM. Tampilkan galeri foto pre-wed dengan lightbox yang elegan.</p>
               </div>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>💬</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-comments"></i>
+                </div>
                 <h3 className={styles.featureTitle}>Buku Tamu Digital</h3>
                 <p className={styles.featureDesc}>Tamu bisa kirim ucapan dan doa langsung di halaman undangan. Tampil cantik seperti guestbook fisik.</p>
               </div>
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>💳</div>
+                <div className={styles.featureIcon}>
+                  <i className="fa-solid fa-wallet"></i>
+                </div>
                 <h3 className={styles.featureTitle}>Amplop Digital</h3>
                 <p className={styles.featureDesc}>Tampilkan nomor rekening & QRIS dengan animasi amplop yang menarik. Copy-paste sekali klik.</p>
               </div>
@@ -180,8 +217,11 @@ export default function LandingPage() {
         <section className={styles.templates}>
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
-              <span className={styles.sectionSubtitle}>Template pilihan</span>
-              <h2 className={styles.sectionTitle}>Desain yang tak terlupakan</h2>
+              <span className={styles.sectionSubtitle}>Template Pilihan</span>
+              <h2 className={styles.sectionTitle}>Desain yang Tak Terlupakan</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-gift"></i>
+              </div>
               <p className={styles.sectionDesc}>Setiap template dibuat dengan detail dan penuh cinta oleh desainer Indonesia.</p>
             </div>
 
@@ -197,7 +237,9 @@ export default function LandingPage() {
                   />
                   <span className={styles.templateTag}>Populer</span>
                   <div className={styles.templateOverlay}>
-                    <Link href="/preview" className={styles.btnPrimary}>Lihat Demo</Link>
+                    <Link href="/preview" className={styles.btnPrimary}>
+                      Lihat Demo <i className="fa-solid fa-eye" style={{ marginLeft: "8px" }}></i>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.templateCardContent}>
@@ -220,7 +262,9 @@ export default function LandingPage() {
                     className={styles.templateImage}
                   />
                   <div className={styles.templateOverlay}>
-                    <Link href="/preview" className={styles.btnPrimary}>Lihat Demo</Link>
+                    <Link href="/preview" className={styles.btnPrimary}>
+                      Lihat Demo <i className="fa-solid fa-eye" style={{ marginLeft: "8px" }}></i>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.templateCardContent}>
@@ -243,7 +287,9 @@ export default function LandingPage() {
                     className={styles.templateImage}
                   />
                   <div className={styles.templateOverlay}>
-                    <Link href="/preview" className={styles.btnPrimary}>Lihat Demo</Link>
+                    <Link href="/preview" className={styles.btnPrimary}>
+                      Lihat Demo <i className="fa-solid fa-eye" style={{ marginLeft: "8px" }}></i>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.templateCardContent}>
@@ -267,7 +313,9 @@ export default function LandingPage() {
                   />
                   <span className={styles.templateTag}>Baru</span>
                   <div className={styles.templateOverlay}>
-                    <Link href="/preview" className={styles.btnPrimary}>Lihat Demo</Link>
+                    <Link href="/preview" className={styles.btnPrimary}>
+                      Lihat Demo <i className="fa-solid fa-eye" style={{ marginLeft: "8px" }}></i>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.templateCardContent}>
@@ -290,7 +338,9 @@ export default function LandingPage() {
                     className={styles.templateImage}
                   />
                   <div className={styles.templateOverlay}>
-                    <Link href="/preview" className={styles.btnPrimary}>Lihat Demo</Link>
+                    <Link href="/preview" className={styles.btnPrimary}>
+                      Lihat Demo <i className="fa-solid fa-eye" style={{ marginLeft: "8px" }}></i>
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.templateCardContent}>
@@ -306,7 +356,7 @@ export default function LandingPage() {
 
             <div className={styles.templatesAction}>
               <Link href="/templates" className={styles.btnSecondary}>
-                Lihat Semua Template
+                Lihat Semua Template <i className="fa-solid fa-circle-arrow-right" style={{ marginLeft: "8px", color: "var(--accent)" }}></i>
               </Link>
             </div>
           </div>
@@ -317,7 +367,10 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Harga</span>
-              <h2 className={styles.sectionTitle}>Transparan, tanpa biaya tersembunyi</h2>
+              <h2 className={styles.sectionTitle}>Transparan, Tanpa Biaya Tersembunyi</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-tag"></i>
+              </div>
               <p className={styles.sectionDesc}>Pilih paket yang paling sesuai dengan kebutuhan perayaan Anda.</p>
             </div>
 
@@ -328,12 +381,24 @@ export default function LandingPage() {
                 <div className={styles.pricingPrice}>Rp0</div>
                 <span className={styles.pricingPeriod}>Selamanya gratis</span>
                 <ul className={styles.pricingFeatures}>
-                  <li className={styles.pricingFeature}>✓ 3 template dasar</li>
-                  <li className={styles.pricingFeature}>✓ RSVP hingga 50 tamu</li>
-                  <li className={styles.pricingFeature}>✓ Buku tamu digital</li>
-                  <li className={styles.pricingFeature}>✓ Link undangan aktif 3 bulan</li>
-                  <li className={`${styles.pricingFeature} ${styles.pricingFeatureDisabled}`}>— Musik & galeri foto</li>
-                  <li className={`${styles.pricingFeature} ${styles.pricingFeatureDisabled}`}>— Amplop digital</li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> 3 template dasar
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> RSVP hingga 50 tamu
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Buku tamu digital
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Link undangan aktif 3 bulan
+                  </li>
+                  <li className={`${styles.pricingFeature} ${styles.pricingFeatureDisabled}`}>
+                    <i className="fa-solid fa-circle-xmark"></i> Musik & galeri foto
+                  </li>
+                  <li className={`${styles.pricingFeature} ${styles.pricingFeatureDisabled}`}>
+                    <i className="fa-solid fa-circle-xmark"></i> Amplop digital
+                  </li>
                 </ul>
                 <a href="https://api.whatsapp.com/send?phone=628123456789" className={`${styles.pricingBtn} ${styles.pricingBtnSecondary}`} target="_blank" rel="noopener noreferrer">
                   Mulai Gratis
@@ -347,12 +412,24 @@ export default function LandingPage() {
                 <div className={styles.pricingPrice}>Rp149k</div>
                 <span className={styles.pricingPeriod}>Sekali bayar, seumur hidup</span>
                 <ul className={styles.pricingFeatures}>
-                  <li className={styles.pricingFeature}>✓ Semua 50+ template premium</li>
-                  <li className={styles.pricingFeature}>✓ RSVP tanpa batas tamu</li>
-                  <li className={styles.pricingFeature}>✓ Musik & galeri foto HD</li>
-                  <li className={styles.pricingFeature}>✓ Amplop digital + QRIS</li>
-                  <li className={styles.pricingFeature}>✓ Countdown timer live</li>
-                  <li className={styles.pricingFeature}>✓ Link aktif selamanya</li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> Semua 50+ template premium
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> RSVP tanpa batas tamu
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> Musik & galeri foto HD
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> Amplop digital + QRIS
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> Countdown timer live
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check" style={{ color: "var(--gold)" }}></i> Link aktif selamanya
+                  </li>
                 </ul>
                 <a href="https://api.whatsapp.com/send?phone=628123456789" className={`${styles.pricingBtn} ${styles.pricingBtnPrimary}`} target="_blank" rel="noopener noreferrer">
                   Pilih Pro
@@ -365,12 +442,24 @@ export default function LandingPage() {
                 <div className={styles.pricingPrice}>Rp49k</div>
                 <span className={styles.pricingPeriod}>Per undangan / bulan</span>
                 <ul className={styles.pricingFeatures}>
-                  <li className={styles.pricingFeature}>✓ Semua fitur Pro</li>
-                  <li className={styles.pricingFeature}>✓ Custom domain sendiri</li>
-                  <li className={styles.pricingFeature}>✓ White-label (tanpa branding)</li>
-                  <li className={styles.pricingFeature}>✓ Dashboard multi-klien</li>
-                  <li className={styles.pricingFeature}>✓ Prioritas support</li>
-                  <li className={styles.pricingFeature}>✓ Invoice & laporan</li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Semua fitur Pro
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Custom domain sendiri
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> White-label (tanpa branding)
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Dashboard multi-klien
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Prioritas support
+                  </li>
+                  <li className={styles.pricingFeature}>
+                    <i className="fa-solid fa-circle-check"></i> Invoice & laporan
+                  </li>
                 </ul>
                 <a href="https://api.whatsapp.com/send?phone=628123456789" className={`${styles.pricingBtn} ${styles.pricingBtnSecondary}`} target="_blank" rel="noopener noreferrer">
                   Hubungi Kami
@@ -385,14 +474,23 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Testimoni</span>
-              <h2 className={styles.sectionTitle}>Kata mereka yang sudah bahagia</h2>
+              <h2 className={styles.sectionTitle}>Kata Mereka yang Sudah Bahagia</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-comments"></i>
+              </div>
               <p className={styles.sectionDesc}>Cerita dari pasangan pengantin yang telah menggunakan layanan kami.</p>
             </div>
 
             <div className={styles.testimonialsGrid}>
               <div className={styles.testimonialCard}>
                 <div>
-                  <div className={styles.stars}>★★★★★</div>
+                  <div className={styles.stars}>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
                   <p className={styles.quote}>
                     &ldquo;Tamunya pada bilang undangannya paling keren yang pernah mereka dapat. Countdown timer-nya bikin deg-degan terus!&rdquo;
                   </p>
@@ -408,7 +506,13 @@ export default function LandingPage() {
 
               <div className={styles.testimonialCard}>
                 <div>
-                  <div className={styles.stars}>★★★★★</div>
+                  <div className={styles.stars}>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
                   <p className={styles.quote}>
                     &ldquo;Gampang banget dipakai, desainnya bagus-bagus. RSVP langsung kelihatan siapa aja yang hadir. Recommended banget!&rdquo;
                   </p>
@@ -424,7 +528,13 @@ export default function LandingPage() {
 
               <div className={styles.testimonialCard}>
                 <div>
-                  <div className={styles.stars}>★★★★★</div>
+                  <div className={styles.stars}>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                  </div>
                   <p className={styles.quote}>
                     &ldquo;Pakai paket Pro, worth it banget. Amplop digitalnya praktis, ga perlu repot-repot cetak amplop fisik lagi.&rdquo;
                   </p>
@@ -446,7 +556,10 @@ export default function LandingPage() {
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>FAQ</span>
-              <h2 className={styles.sectionTitle}>Pertanyaan yang sering ditanya</h2>
+              <h2 className={styles.sectionTitle}>Pertanyaan yang Sering Ditanya</h2>
+              <div className="floral-divider">
+                <i className="fa-solid fa-circle-question"></i>
+              </div>
               <p className={styles.sectionDesc}>Semua yang perlu Anda ketahui tentang pembuatan undangan kami.</p>
             </div>
 
@@ -458,7 +571,9 @@ export default function LandingPage() {
                     className={styles.faqQuestion}
                   >
                     <span>{faq.question}</span>
-                    <span className={`${styles.faqIcon} ${activeFaq === index ? styles.faqIconActive : ""}`}>+</span>
+                    <span className={`${styles.faqIcon} ${activeFaq === index ? styles.faqIconActive : ""}`}>
+                      <i className="fa-solid fa-plus"></i>
+                    </span>
                   </button>
                   <div 
                     className={`${styles.faqAnswer} ${activeFaq === index ? styles.faqAnswerActive : ""}`}
@@ -481,10 +596,10 @@ export default function LandingPage() {
               </p>
               <div className={styles.ctaActions}>
                 <a href="https://api.whatsapp.com/send?phone=628123456789" className={styles.btnWhite} target="_blank" rel="noopener noreferrer">
-                  Buat Undangan Gratis
+                  Buat Undangan Gratis <i className="fa-solid fa-wand-magic-sparkles" style={{ marginLeft: "8px" }}></i>
                 </a>
                 <Link href="/templates" className={styles.btnOutlineWhite}>
-                  Lihat Semua Template
+                  Lihat Semua Template <i className="fa-solid fa-chevron-right" style={{ marginLeft: "8px" }}></i>
                 </Link>
               </div>
             </div>

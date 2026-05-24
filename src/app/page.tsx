@@ -47,72 +47,56 @@ export default function LandingPage() {
 
       <main className={styles.mainContent}>
         {/* Hero Section */}
-        <section className={styles.hero}>
+        <section className={styles.heroEditorial}>
           <div className={styles.container}>
-            <div className={styles.heroGrid}>
-              <div className={styles.heroLeft}>
-                <span className={styles.badge}>
-                  <i className="fa-solid fa-wand-magic-sparkles"></i> Undangan Digital #1 di Indonesia
-                </span>
-                <h1 className={styles.title}>
-                  Undangan yang berkesan
-                  <span className={styles.titleHighlight}>untuk hari istimewa</span>
+            <div className={styles.heroEditorialGrid}>
+              <div className={styles.heroEditorialContent}>
+                <div className={styles.editorialBadge}>
+                  <i className="fa-solid fa-sparkles"></i> Lebih dari sekadar undangan
+                </div>
+                <h1 className={styles.editorialTitle}>
+                  Bagikan <span className={styles.editorialItalic}>Cinta</span> Anda <br />
+                  Tanpa <span className={styles.editorialHighlight}>Batas</span>
                 </h1>
-                <p className={styles.description}>
-                  Buat undangan pernikahan digital yang elegan, interaktif, dan mudah dibagikan — tanpa perlu keahlian desain apapun.
+                <p className={styles.editorialDescription}>
+                  Platform pembuatan undangan digital paling elegan. Desain eksklusif, fitur RSVP interaktif, dan galeri memukau dalam satu sentuhan.
                 </p>
-                <div className={styles.heroActions}>
+                <div className={styles.editorialActions}>
                   <Link href="/templates" className={styles.btnPrimary}>
-                    Mulai Gratis Sekarang <i className="fa-solid fa-arrow-right" style={{ marginLeft: "8px" }}></i>
+                    Buat Undangan <i className="fa-solid fa-arrow-right" style={{ marginLeft: "8px" }}></i>
                   </Link>
                   <Link href="/preview" className={styles.btnSecondary}>
-                    Lihat Demo <i className="fa-solid fa-circle-play" style={{ marginLeft: "8px", color: "var(--accent)" }}></i>
+                    Eksplor Tema
                   </Link>
                 </div>
-                <div className={styles.stats}>
-                  <div className={styles.statItem}>
-                    <span className={styles.statNum}>12k+</span>
-                    <span className={styles.statLabel}>Pasangan bahagia</span>
+                <div className={styles.userAvatars}>
+                  <div className={styles.avatarsGroup}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100" alt="User 1" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100" alt="User 2" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100" alt="User 3" />
+                    <div className={styles.avatarMore}>12k+</div>
                   </div>
-                  <div className={styles.statItem}>
-                    <span className={styles.statNum}>98%</span>
-                    <span className={styles.statLabel}>Tamu terkesan</span>
-                  </div>
-                  <div className={styles.statItem}>
-                    <span className={styles.statNum}>50+</span>
-                    <span className={styles.statLabel}>Template premium</span>
-                  </div>
-                  <div className={styles.statItem}>
-                    <span className={styles.statNum}>4.9★</span>
-                    <span className={styles.statLabel}>Rating pengguna</span>
-                  </div>
+                  <span className={styles.avatarsText}>Pasangan telah bergabung</span>
                 </div>
               </div>
-              <div className={styles.heroRight}>
-                <div className={styles.heroPreview}>
+              
+              <div className={styles.heroEditorialVisual}>
+                <div className={styles.archFrame}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" 
-                    alt="Undangly Preview" 
-                    className={styles.heroImage}
-                  />
-                </div>
-
-                {/* Floating Dopamine Badges */}
-                <div className={`${styles.floatingCard} ${styles.floatingCard1}`}>
-                  <span className={styles.floatingCardIcon}>🌸</span>
-                  <div className={styles.floatingCardText}>
-                    <h4>50+ Tema Indah</h4>
-                    <p>Modern & Elegan</p>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800" alt="Wedding Couple" className={styles.archImage} />
                 </div>
                 
-                <div className={`${styles.floatingCard} ${styles.floatingCard2}`}>
-                  <span className={styles.floatingCardIcon}>✨</span>
-                  <div className={styles.floatingCardText}>
-                    <h4>RSVP Real-time</h4>
-                    <p>Konfirmasi Otomatis</p>
-                  </div>
+                <div className={styles.polaroidFrame}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=400" alt="Detail" />
+                  <div className={styles.polaroidText}>Rina & Dimas</div>
+                </div>
+
+                <div className={styles.floatingPremium}>
+                  Premium<br/>Templates
                 </div>
               </div>
             </div>
@@ -120,7 +104,7 @@ export default function LandingPage() {
         </section>
 
         {/* Steps Section */}
-        <section className={styles.steps}>
+        <section id="cara-kerja" className={styles.steps}>
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Cara kerja</span>
@@ -155,7 +139,7 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section className={styles.features}>
+        <section id="fitur" className={styles.features}>
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Fitur unggulan</span>
@@ -470,7 +454,7 @@ export default function LandingPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className={styles.testimonials}>
+        <section id="testimoni" className={styles.testimonials}>
           <div className={styles.container}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionSubtitle}>Testimoni</span>

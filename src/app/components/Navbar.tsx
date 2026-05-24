@@ -26,6 +26,12 @@ export default function Navbar() {
             Templates
           </Link>
           <Link 
+            href="/services" 
+            className={`${styles.navLink} ${isLinkActive("/services") ? styles.active : ""}`}
+          >
+            Layanan
+          </Link>
+          <Link 
             href="/pricing" 
             className={`${styles.navLink} ${isLinkActive("/pricing") ? styles.active : ""}`}
           >

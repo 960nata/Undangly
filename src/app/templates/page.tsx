@@ -88,17 +88,18 @@ export default function TemplatesPage() {
       <Navbar />
 
       <main className={styles.mainContent}>
-        {/* Hero Section */}
-        <section className={styles.hero}>
+        {/* Editorial Hero Section */}
+        <section className={styles.heroEditorial}>
           <div className={styles.container}>
-            <span className={styles.subtitle}>ELEGANT DESIGNS</span>
-            <h1 className={styles.title}>Katalog Template Premium</h1>
-            <div className="floral-divider">
-              <span style={{ fontSize: "1.2rem", color: "var(--accent)" }}>✿</span>
+            <div className={styles.heroContent}>
+              <span className={styles.subtitle}>ELEGANT DESIGNS</span>
+              <h1 className={styles.title}>
+                Katalog <span className={styles.italic}>Template</span> Premium
+              </h1>
+              <p className={styles.introText}>
+                Eksplorasi koleksi desain eksklusif kami. Perpaduan harmonis antara keanggunan estetika dan struktur modern untuk menyampaikan kisah cinta Anda.
+              </p>
             </div>
-            <p className={styles.introText}>
-              Pilih dari koleksi tema pilihan terbaik kami yang dirancang dengan perhatian penuh pada estetika, kenyamanan pengguna, dan keanggunan.
-            </p>
           </div>
         </section>
 
@@ -117,11 +118,11 @@ export default function TemplatesPage() {
               ))}
             </div>
 
-            {/* Template Grid */}
-            <div className={styles.grid}>
-              {filteredTemplates.map((tpl) => (
-                <div key={tpl.id} className={styles.card}>
-                  <div className={styles.imageContainer}>
+            {/* Editorial Masonry Grid */}
+            <div className={styles.masonryGrid}>
+              {filteredTemplates.map((tpl, index) => (
+                <div key={tpl.id} className={`${styles.card} ${index % 2 === 0 ? styles.cardTall : styles.cardShort}`}>
+                  <div className={styles.imageWrapper}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={tpl.imageUrl} alt={tpl.name} className={styles.image} />
                     {tpl.tag && <span className={styles.tag}>{tpl.tag}</span>}
@@ -134,25 +135,22 @@ export default function TemplatesPage() {
 
                   <div className={styles.cardContent}>
                     <div className={styles.cardHeader}>
-                      <h3 className={styles.tplName}>{tpl.name}</h3>
                       <span className={styles.tplCategory}>{tpl.category}</span>
+                      <h3 className={styles.tplName}>{tpl.name}</h3>
                     </div>
                     <p className={styles.tplDesc}>{tpl.description}</p>
                     
                     <div className={styles.features}>
-                      {tpl.features.map((feat, idx) => (
+                      {tpl.features.slice(0, 3).map((feat, idx) => (
                         <span key={idx} className={styles.featureBadge}>
-                          ✓ {feat}
+                          {feat}
                         </span>
                       ))}
                     </div>
 
                     <div className={styles.actions}>
-                      <a href={tpl.demoUrl} className={styles.btnSecondary} target="_blank" rel="noopener noreferrer">
-                        Live Demo
-                      </a>
-                      <a href="https://api.whatsapp.com/send?phone=628123456789" className={styles.btnPrimary} target="_blank" rel="noopener noreferrer">
-                        Pilih Tema Ini
+                      <a href="/login" className={styles.btnPrimary}>
+                        Pilih Desain
                       </a>
                     </div>
                   </div>
